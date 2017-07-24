@@ -3,7 +3,7 @@ MAINTAINER "Aidan Harris" <mail@aidanharris.io>
 
 # The `|| true` is to avoid errors from System D being unavailable during build since there is no `--privileged` flag for `docker build` - DO NOT REMOVE THIS
 RUN yum update -y && \
-    yum install -y curl && \
+    yum install -y curl deltarpm && \
     mkdir -p /srv/salt && \
     mkdir -p /srv/formulas && \
     curl -L https://bootstrap.saltstack.com | sh || true && \
